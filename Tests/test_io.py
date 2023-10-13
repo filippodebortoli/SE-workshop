@@ -1,15 +1,15 @@
-from category import Category
 import os
 from pathlib import Path
+from csv_import import import_csv
+from category import Category
 from question import Question
 
 class Test_io(object):
     def test_import_of_dummy_csv(self):
         tests_directory = Path(os.getcwd())
-        csv_data = Path.joinpath(tests_directory.parent, "questions.csv")
-        # your code goes here
-
-        assert False
+        path_to_csv_data = Path.joinpath(tests_directory.parent, "questions.csv")
+        categories = import_csv(str(path_to_csv_data))
+        assert categories == self.mock_data()
 
     @property
     def mock_data(self) -> [Category]:

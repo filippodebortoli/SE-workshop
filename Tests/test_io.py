@@ -9,7 +9,7 @@ class Test_io(object):
         tests_directory = Path(os.getcwd())
         path_to_csv_data = Path.joinpath(tests_directory.parent, "questions.csv")
         categories = import_csv(str(path_to_csv_data))
-        assert categories == self.mock_data()
+        assert categories == self.mock_data
 
     @property
     def mock_data(self) -> [Category]:

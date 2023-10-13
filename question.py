@@ -2,7 +2,7 @@ class Question(object):
     def __init__(self,title: str, answer: str):
         """
         Constructor with title and answer
-        :param title: The quesiton's title (the question)
+        :param title: The question's title (the question)
         :param answer: The question's answer
         """
         self.title = title
@@ -13,4 +13,3 @@ class Question(object):
 
     def __hash__(self):
         return hash(self.title + self.answer)
-

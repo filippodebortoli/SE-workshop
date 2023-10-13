@@ -3,6 +3,10 @@ from category import Category
 from question import Question
 
 def import_csv(filename: str) -> [Category]: # type: ignore
+    """
+    Imports questions and categories from a CSV file.
+    Format: [question,answer,category], no whitespace, comma is separator.
+    """
     categories_dict = {}
     with open(file=filename, newline='') as csvfile:
         csv_reader = csv.reader(csvfile,delimiter=',',quotechar="|")
